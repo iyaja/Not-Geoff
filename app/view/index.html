@@ -66,9 +66,7 @@
       } else {
         // Register the service worker
         navigator.serviceWorker
-          .register("../static/pwabuilder-sw.js", {
-            scope: "../static"
-          })
+          .register("../static/pwabuilder-sw.js")
           .then(function (reg) {
             console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
           });
