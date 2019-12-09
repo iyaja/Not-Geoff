@@ -18,6 +18,7 @@ path = Path(__file__).parent
 app = Starlette()
 app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_headers=['X-Requested-With', 'Content-Type', 'Service-Worker-Allowed'])
 app.mount('/static', StaticFiles(directory='app/static'))
+app.mount('/', StaticFiles(directory='app/'))
 
 
 async def download_file(url, dest):
