@@ -28,6 +28,7 @@ function analyze() {
   };
   xhr.onload = function(e) {
     if (this.readyState === 4) {
+      console.log(e.target.responseText);
       var response = JSON.parse(e.target.responseText);
       el("result-label").innerHTML = `This person is probably ${response["result"]}`;
     }
