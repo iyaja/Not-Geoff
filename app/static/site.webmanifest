@@ -1,7 +1,7 @@
 {
     "name": "Not Geoff",
     "short_name": "Not Geoff",
-    "start_url": "https://not-geoff.onrender.com/index.html",
+    "start_url": "https://not-geoff.onrender.com/static/index.html",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
