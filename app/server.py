@@ -16,7 +16,7 @@ classes = ['geoff', 'not geoff']
 path = Path(__file__).parent
 
 app = Starlette()
-app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_headers=['X-Requested-With', 'Content-Type', 'Service-Worker-Allowed'], expose_headers=['Service-Worker-Allowed'])
+app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_headers=['X-Requested-With', 'Content-Type'])
 # app.mount('/static', StaticFiles(directory='app/static'))
 app.mount('/', StaticFiles(directory='app/static'))
 # app.mount('/pwabuilder-sw.js', StaticFiles(directory='app/static/pwabuilder-sw.js'))
@@ -51,11 +51,11 @@ learn = loop.run_until_complete(asyncio.gather(*tasks))[0]
 loop.close()
 
 
-@app.route('/')
-async def homepage(request):
-    # html_file = path / 'view' / 'index.html'
-    html_file = path / 'index.html'
-    return HTMLResponse(html_file.open().read())
+# @app.route('/')
+# async def homepage(request):
+#     # html_file = path / 'view' / 'index.html'
+#     html_file = path / 'index.html'
+#     return HTMLResponse(html_file.open().read())
 
 
 @app.route('/analyze', methods=['POST'])
